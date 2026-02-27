@@ -1,0 +1,77 @@
+.job {
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid #F1F2F4;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.job-title {
+    color: #002C5C;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-role {
+    color: #64748B;
+    font-weight: regular;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+
+.btn-trash {
+    border: 1px solid #F1F2F4;
+    border-radius: 100%;
+    padding: 0.5rem;
+    background-color: white;
+
+}
+
+.job-features {
+    color: #64748B;
+    font-weight: regular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.btn-apply {
+    background-color: #EEF4FF;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #002C5C;
+    margin-bottom: 0.5rem;
+}
+
+.job-description {
+    color: #323B49;
+    font-weight: regular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.btn-interview {
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #10B981;
+    border: 1px solid #10B981;
+    background-color: white;
+    margin-right: 0.5rem;
+}
+
+.btn-rejected {
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #EF4444;
+    border: 1px solid #EF4444;
+    background-color: white;
+}
