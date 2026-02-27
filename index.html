@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- Tailwind CSS and Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Daisy UI Themes -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#F8FAFC] min-h-screen">
+    <header class="max-w-227.5 mx-auto pt-15">
+        <h1 class="text-[#002C5C] font-bold text-[2rem] leading-8 mb-5">Job Application Tracker</h1>
+
+        <section class="grid md:grid-cols-3 md:grid-rows-1 gap-4">
+            <div class="bg-white p-5 rounded-lg">
+                <h2 class="text-[#323B49] font-medium text-sm">Total</h2>
+                <p id="total" class="bg-linear-to-r from-[#002B70] to-[#0060FA] bg-clip-text text-transparent font-bold text-2xl">8</p>
+            </div>
+            
+            <div class="bg-white p-5 rounded-lg"">
+                <h2 class="text-[#323B49] font-medium text-sm">Interview</h2>
+                <p class="text-[#10B981] font-bold text-2xl">0</p>
+            </div>
+
+            <div class="bg-white p-5 rounded-lg"">
+                <h2 class="text-[#323B49] font-medium text-sm">Rejected</h2>
+                <p class="text-[#EF4444] font-bold text-2xl">0</p>
+            </div>
+        </section>
+
+        <hr class="border-[#E6E7E9] my-7.5">
+    </header>
+
+    <main class="max-w-227.5 mx-auto">
+        <section class="space-y-8">
+            <div class="flex justify-between items-center">
+                <h2 class="text-[#002C5C] text-xl font-semibold">Available Jobs</h2>
+
+                <p class="text-[#64748B] font-medium text-base"><span>0</span> Jobs</p>
+            </div>
+
+            <div>
+                <button class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">All</button>
+
+                <button class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">Interview</button>
+
+                <button class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">Rejected</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="job">
+                <h2></h2>
+
+                <h3></h3>
+
+                <h3></h3>
+
+                <button></button>
+
+                <p></p>
+
+                <div>
+                    <button></button>
+
+                    <button></button>
+                </div>
+
+
+            </div>
+
+            <div id="blank-job" class="flex flex-col justify-center items-center py-27.75 border border-[#F1F2F4] bg-white rounded mt-4">
+                <img class="w-25 mb-5" src="assets/jobs.png" alt="">
+
+                <h2 class="text-[#002C5C] font-semibold text-2xl mb-1">No jobs available</h2>
+
+                <p class="text-[#64748B] font-normal text-base">Check back soon for new job opportunities</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
