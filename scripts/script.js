@@ -112,6 +112,36 @@ const rejected = document.getElementById('rejected');
 let activeTabBtn = document.getElementById('btn-all');
 activeTabBtn.classList.add('active');
 
+function loadScreen() {
+    
+    if (activeTabBtn.id === 'btn-all') {
+        for (const job of jobs) {
+            job.hidden = false;
+        }
+    }
+    else if (activeTabBtn.id === 'btn-interview') {
+        for (const job of jobs) {
+            if (job.classList.contains('interview')) {
+                job.hidden = false;
+            }
+            else {
+                job.hidden = true;
+            }
+        }
+    }
+    else if (activeTabBtn.id === 'btn-rejected') {
+        for (const job of jobs) {
+            if (job.classList.contains('rejected')) {
+                job.hidden = false;
+            }
+            else {
+                job.hidden = true;
+            }
+        }
+    }
+
+}
+
 const tabBtnContainerEl = document.getElementById('tab-btn-container');
 tabBtnContainerEl.addEventListener('click', function (event) {
     const btn = event.target.closest('button');
@@ -123,9 +153,9 @@ tabBtnContainerEl.addEventListener('click', function (event) {
     btn.classList.add('active');
 
     activeTabBtn = btn;
+
+    loadScreen();
 });
-
-
 
 const section = document.getElementById('all');
 
@@ -161,10 +191,10 @@ section.addEventListener('click', function (event) {
 
         job.classList.remove('rejected');
 
-        loadInterview();
-        loadRejected();
+        loadScreen();
 
         displayInterviewCount();
+        displayRejectedCount();
     }
     else if (btn.classList.contains('btn-rejected')) {
         btn.classList.toggle('clicked');
@@ -175,9 +205,9 @@ section.addEventListener('click', function (event) {
 
         job.classList.remove('interview');
 
-        loadInterview();
-        loadRejected();
+        loadScreen();
 
+        displayInterviewCount();
         displayRejectedCount();
     }
 });
