@@ -1,7 +1,7 @@
 // document.querySelectorAll('.job').forEach(job => job.hidden = true);
 
 function displayTotalJobCount() {
-    const jobList = document.querySelectorAll(".job:not(.interview)");
+    const jobList = document.querySelectorAll(".job");
     // How to select element specifically not having hidden attribute or hidden class?
     const jobCount = jobList.length;
 
@@ -10,35 +10,83 @@ function displayTotalJobCount() {
 
     const availableJobsCountEl = document.getElementById('available-jobs-count');
     availableJobsCountEl.textContent = jobCount;
+
+    return jobCount;
 }
 
-displayTotalJobCount();
+function displayInterviewCount() {
+    const interviewList = document.querySelectorAll(".job.interview");
+    const interviewCount = interviewList.length;
 
-const jobList = document.querySelectorAll(".job:not(.interview)");
-// How to select element specifically not having hidden attribute or hidden class?
-const jobCount = jobList.length;
+    const interviewCountEl = document.getElementById('interview-count');
+    interviewCountEl.textContent = interviewCount;
 
-const totalCountEl = document.getElementById('total-count');
-totalCountEl.textContent = jobCount;
+    return interviewCount;
+}
 
-const availableJobsCountEl = document.getElementById('available-jobs-count');
-availableJobsCountEl.textContent = jobCount;
+function displayRejectedCount() {
+    const rejectedList = document.querySelectorAll(".job.rejected");
+    const rejectedCount = rejectedList.length;
 
-const btnAll = document.getElementById('btn-all');
-const btnInterview = document.getElementById('btn-interview');
-const btnRejected = document.getElementById('btn-rejected');
+    const rejectedCountEl = document.getElementById('rejected-count');
+    rejectedCountEl.textContent = rejectedCount;
+}
 
-btnAll.classList.remove('bg-white', 'text-[#64748B]');
-btnAll.classList.add('bg-[#3B82F6]', 'text-white');
-// How to replace multiple classes together?
+const jobCount = displayTotalJobCount();
 
 if (jobCount === 0) {
     document.getElementById('blank-job').hidden = false;
 }
 
+const btnAll = document.getElementById('btn-all');
+const btnInterview = document.getElementById('btn-interview');
+const btnRejected = document.getElementById('btn-rejected');
+
+
+
 function loadAll() {
+    
+    // How to replace multiple classes together?
+}
+
+function loadInterview() {
+    const interview = document.getElementById('interview');
+
+    interview.hidden = false;
+
+    interviewList = 
+
 
 }
+
+loadAll();
+
+let activeTabBtn = document.getElementById('btn-all');
+activeTabBtn.classList.add('active');
+
+const tabBtnContainerEl = document.getElementById('tab-btn-container');
+tabBtnContainerEl.addEventListener('click', function (event) {
+    const btn = event.target.closest('button');
+
+    if (!btn) return;
+
+    activeTabBtn.classList.remove('active');
+
+    btn.classList.add('active');
+
+    activeTabBtn = btn;
+
+    if (btn.id = 'btn-all') {
+        console.log("Yes");
+    }
+    else if (btn.id = 'btn-interview') {
+
+    }
+    else if (btn.id = 'btn-rejected') {
+
+    }
+
+});
 
 document.getElementById('all').addEventListener('click', function (event) {
     console.log(event.target);
@@ -53,8 +101,11 @@ document.getElementById('all').addEventListener('click', function (event) {
         // How to select the element if it has a specific class name?
         job.remove();
 
-        displayTotalJobCount()
+        const jobCount = displayTotalJobCount();
 
+        if (jobCount === 0) {
+            document.getElementById('blank-job').hidden = false;
+        }
     }
     else if (btn.classList.contains('btn-apply')) {
         btn.classList.toggle('clicked');
@@ -70,8 +121,5 @@ document.getElementById('all').addEventListener('click', function (event) {
 
         job.classList.add('rejected');
     }
-
-
-    console.log(btn);
-
 });
+

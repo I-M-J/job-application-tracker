@@ -41,7 +41,7 @@
                 <h2 class="text-[#323B49] font-medium text-sm">Total</h2>
                 <p id="total-count"
                     class="bg-linear-to-r from-[#002B70] to-[#0060FA] bg-clip-text text-transparent font-bold text-2xl">
-                    8</p>
+                    0</p>
             </div>
 
             <div class="bg-white p-5 rounded-lg"">
@@ -63,15 +63,20 @@
             <div class="flex justify-between items-center">
                 <h2 class="text-[#002C5C] text-xl font-semibold">Available Jobs</h2>
 
-                <p id="available-jobs" class="text-[#64748B] font-medium text-base"><span id="available-jobs-count">0</span> Jobs</p>
+                <p id="available-jobs" class="text-[#64748B] font-medium text-base">
+                    <span id="of-jobs"><span id="of-jobs-count">0</span> of </span>
+
+                    <span id="available-jobs-count">0</span> Jobs</p>
             </div>
 
-            <div>
-                <button id="btn-all" class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">All</button>
+            <div id="tab-btn-container">
+                <button id="btn-all" class="btn tab-btn">All</button>
 
-                <button id="btn-interview" class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">Interview</button>
+                <button id="btn-interview"
+                    class="btn tab-btn">Interview</button>
 
-                <button id="btn-rejected" class="btn h-8 w-20 bg-white text-[#64748B] font-medium text-xs">Rejected</button>
+                <button id="btn-rejected"
+                    class="btn tab-btn">Rejected</button>
             </div>
         </section>
 
@@ -119,7 +124,8 @@
 
                 <button class="btn h-full btn-apply">NOT APPLIED</button>
 
-                <p class="job-description">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                <p class="job-description">Create stunning web experiences for high-profile clients. Must have portfolio
+                    and experience with modern web design trends.</p>
 
                 <div>
                     <button class="btn h-full btn-interview">INTERVIEW</button>
@@ -144,7 +150,8 @@
 
                 <button class="btn h-full btn-apply">NOT APPLIED</button>
 
-                <p class="job-description">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                <p class="job-description">Transform complex data into compelling visualizations. Required skills:
+                    D3.js, React, and strong analytical thinking.</p>
 
                 <div>
                     <button class="btn h-full btn-interview">INTERVIEW</button>
@@ -152,7 +159,7 @@
                     <button class="btn h-full btn-rejected">REJECTED</button>
                 </div>
             </div>
-            
+
             <div class="job">
                 <div class="flex justify-between items-center mb-5">
                     <div>
@@ -169,7 +176,8 @@
 
                 <button class="btn h-full btn-apply">NOT APPLIED</button>
 
-                <p class="job-description">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                <p class="job-description">Design and maintain scalable backend systems using Python and AWS. Work with
+                    modern DevOps practices and cloud infrastructure.</p>
 
                 <div>
                     <button class="btn h-full btn-interview">INTERVIEW</button>
@@ -188,7 +196,8 @@
         </section>
 
         <div id="blank-job"
-            class="flex flex-col justify-center items-center py-27.75 border border-[#F1F2F4] bg-white rounded mt-4" hidden>
+            class="flex flex-col justify-center items-center py-27.75 border border-[#F1F2F4] bg-white rounded mt-4"
+            hidden>
             <img class="w-25 mb-5" src="assets/jobs.png" alt="">
 
             <h2 class="text-[#002C5C] font-semibold text-2xl mb-1">No jobs available</h2>
@@ -200,7 +209,7 @@
     </main>
 
     <script src="scripts/script.js"></script>
-    
+
 </body>
 
 </html>

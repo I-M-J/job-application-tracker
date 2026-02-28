@@ -1,3 +1,19 @@
+.tab-btn {
+    /* h-8 w-20 bg-white text-[#64748B] font-medium text-xs */
+    height: 2rem;
+    width: 5rem;
+    background-color: white;
+    color: #64748B;
+    font-weight: 500;
+    font-size:  0.75rem;
+}
+
+.tab-btn.active {
+    /* 'bg-[#3B82F6]', 'text-white' */
+    background-color: #3B82F6;
+    color: white;
+}
+
 .job {
     background-color: white;
     padding: 1.5rem;
