@@ -1,9 +1,16 @@
-// document.querySelectorAll('.job').forEach(job => job.hidden = true);
+let jobs = document.getElementsByClassName('job');
+console.log(jobs);
+
+// const oldJobs = document.querySelectorAll('.job');
+
+// for (const job of oldJobs) {
+//     job.hidden = true;
+// }
 
 function displayTotalJobCount() {
-    const jobList = document.querySelectorAll(".job");
+    // const jobList = document.querySelectorAll(".job");
     // How to select element specifically not having hidden attribute or hidden class?
-    const jobCount = jobList.length;
+    const jobCount = jobs.length;
 
     const totalCountEl = document.getElementById('total-count');
     totalCountEl.textContent = jobCount;
@@ -15,18 +22,26 @@ function displayTotalJobCount() {
 }
 
 function displayInterviewCount() {
-    const interviewList = document.querySelectorAll(".job.interview");
-    const interviewCount = interviewList.length;
+    let interviewCount = 0;
+
+    for (const job of jobs) {
+        if (job.classList.contains('interview')) {
+            interviewCount++;
+        }
+    }
 
     const interviewCountEl = document.getElementById('interview-count');
     interviewCountEl.textContent = interviewCount;
-
-    return interviewCount;
 }
 
 function displayRejectedCount() {
-    const rejectedList = document.querySelectorAll(".job.rejected");
-    const rejectedCount = rejectedList.length;
+    let rejectedCount = 0;
+
+    for (const job of jobs) {
+        if (job.classList.contains('rejected')) {
+            rejectedCount++;
+        }
+    }
 
     const rejectedCountEl = document.getElementById('rejected-count');
     rejectedCountEl.textContent = rejectedCount;
@@ -42,24 +57,57 @@ const btnAll = document.getElementById('btn-all');
 const btnInterview = document.getElementById('btn-interview');
 const btnRejected = document.getElementById('btn-rejected');
 
+const all = document.getElementById('all');
+const interview = document.getElementById('interview');
+const rejected = document.getElementById('rejected');
+
+// function loadAll() {
 
 
-function loadAll() {
-    
-    // How to replace multiple classes together?
-}
+//     // for (const job of jobs) {
+//     //     all.appendChild(job);
+//     // }
 
-function loadInterview() {
-    const interview = document.getElementById('interview');
-
-    interview.hidden = false;
-
-    interviewList = 
+//     // How to remove all the child elements from a parent element?
+//     // How to replace multiple classes together?
+// }
 
 
-}
 
-loadAll();
+// function loadInterview() {
+//     for (const job of jobs) {
+//         if (job.classList.contains('interview')) {
+//             interview.appendChild(job);
+//         }
+//     }
+// }
+
+// function showInterview() {
+//     all.hidden = true;
+//     interview.hidden = false;
+//     rejected.hidden = true;
+
+//     loadInterview();
+// }
+
+
+// function loadRejected() {
+//     for (const job of jobs) {
+//         if (job.classList.contains('rejected')) {
+//             rejected.appendChild(job);
+//         }
+//     }
+// }
+
+// function showRejected() {
+//     all.hidden = true;
+//     interview.hidden = true;
+//     rejected.hidden = false;
+
+//     loadRejected();
+// }
+
+// loadAll();
 
 let activeTabBtn = document.getElementById('btn-all');
 activeTabBtn.classList.add('active');
@@ -75,20 +123,13 @@ tabBtnContainerEl.addEventListener('click', function (event) {
     btn.classList.add('active');
 
     activeTabBtn = btn;
-
-    if (btn.id = 'btn-all') {
-        console.log("Yes");
-    }
-    else if (btn.id = 'btn-interview') {
-
-    }
-    else if (btn.id = 'btn-rejected') {
-
-    }
-
 });
 
-document.getElementById('all').addEventListener('click', function (event) {
+
+
+const section = document.getElementById('all');
+
+section.addEventListener('click', function (event) {
     console.log(event.target);
 
     const btn = event.target.closest('button');
@@ -114,12 +155,31 @@ document.getElementById('all').addEventListener('click', function (event) {
     else if (btn.classList.contains('btn-interview')) {
         btn.classList.toggle('clicked');
 
-        job.classList.add('interview');
+        job.classList.toggle('interview');
+
+        job.querySelector('.btn-rejected').classList.remove('clicked');
+
+        job.classList.remove('rejected');
+
+        loadInterview();
+        loadRejected();
+
+        displayInterviewCount();
     }
     else if (btn.classList.contains('btn-rejected')) {
         btn.classList.toggle('clicked');
 
-        job.classList.add('rejected');
+        job.classList.toggle('rejected');
+
+        job.querySelector('.btn-interview').classList.remove('clicked');
+
+        job.classList.remove('interview');
+
+        loadInterview();
+        loadRejected();
+
+        displayRejectedCount();
     }
 });
+
 
