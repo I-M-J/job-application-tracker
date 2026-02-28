@@ -47,6 +47,11 @@
     margin-bottom: 0.5rem;
 }
 
+.btn-apply.clicked {
+    color: white;
+    background-color: #3B82F6;
+}
+
 .job-description {
     color: #323B49;
     font-weight: regular;
@@ -66,6 +71,11 @@
     margin-right: 0.5rem;
 }
 
+.btn-interview.clicked {
+    color: white;
+    background-color: #10B981;
+}
+
 .btn-rejected {
     padding: 0.5rem 0.75rem;
     font-weight: 600;
@@ -74,4 +84,9 @@
     color: #EF4444;
     border: 1px solid #EF4444;
     background-color: white;
+}
+
+.btn-rejected.clicked {
+    color: white;
+    background-color: #EF4444;
 }
