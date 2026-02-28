@@ -1,5 +1,5 @@
 let jobs = document.getElementsByClassName('job');
-console.log(jobs);
+// console.log(jobs);
 
 // const oldJobs = document.querySelectorAll('.job');
 
@@ -113,11 +113,13 @@ let activeTabBtn = document.getElementById('btn-all');
 activeTabBtn.classList.add('active');
 
 function loadScreen() {
-    
+
     if (activeTabBtn.id === 'btn-all') {
         for (const job of jobs) {
             job.hidden = false;
         }
+
+        document.getElementById('of-jobs').hidden = true;
     }
     else if (activeTabBtn.id === 'btn-interview') {
         for (const job of jobs) {
@@ -128,6 +130,9 @@ function loadScreen() {
                 job.hidden = true;
             }
         }
+
+        document.getElementById('of-jobs-count').textContent = document.getElementById('interview-count').textContent;
+        document.getElementById('of-jobs').hidden = false;
     }
     else if (activeTabBtn.id === 'btn-rejected') {
         for (const job of jobs) {
@@ -138,6 +143,9 @@ function loadScreen() {
                 job.hidden = true;
             }
         }
+
+        document.getElementById('of-jobs-count').textContent = document.getElementById('rejected-count').textContent;
+        document.getElementById('of-jobs').hidden = false;
     }
 
 }
@@ -160,7 +168,7 @@ tabBtnContainerEl.addEventListener('click', function (event) {
 const section = document.getElementById('all');
 
 section.addEventListener('click', function (event) {
-    console.log(event.target);
+    // console.log(event.target);
 
     const btn = event.target.closest('button');
     // How to capture the closest clicked parent element which is a button?
@@ -177,6 +185,9 @@ section.addEventListener('click', function (event) {
         if (jobCount === 0) {
             document.getElementById('blank-job').hidden = false;
         }
+
+        displayInterviewCount();
+        displayRejectedCount();
     }
     else if (btn.classList.contains('btn-apply')) {
         btn.classList.toggle('clicked');
